@@ -31,8 +31,17 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -41,7 +50,32 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Base\BaseBll.cs" />
+    <Compile Include="Functions\Convert.cs" />
+    <Compile Include="Functions\GeneralFunctions.cs" />
+    <Compile Include="Interfaces\IBaseBll.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\StudentTrackingSoftware.Dal\StudentTrackingSoftware.Dal.csproj">
+      <Project>{33FC750E-4FD4-4A09-9A27-1879D0A0A314}</Project>
+      <Name>StudentTrackingSoftware.Dal</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\StudentTrackingSoftware.Data\StudentTrackingSoftware.Data.csproj">
+      <Project>{b301d881-4513-4959-84d9-89264712f500}</Project>
+      <Name>StudentTrackingSoftware.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\StudentTrackingSoftware.Model\StudentTrackingSoftware.Model.csproj">
+      <Project>{939EA93B-9E86-4AC5-8F1E-905AEFD0505B}</Project>
+      <Name>StudentTrackingSoftware.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\StudentTrackinSoftware.Common\StudentTrackinSoftware.Common.csproj">
+      <Project>{0753EC24-181F-4231-A23B-26B3C0847FFE}</Project>
+      <Name>StudentTrackinSoftware.Common</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
